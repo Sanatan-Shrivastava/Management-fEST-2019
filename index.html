@@ -90,19 +90,6 @@
 
     <!--cover section slider -->
     <section id="home" class="home-cover">
-        <video autoplay muted loop id="myVideo">
-                    <source src="./src/images/Glowing Fall.webm" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>
-        <style>
-            #myVideo {
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                min-width: 100%;
-                min-height: 100%;
-            }
-        </style>
         <div class="cover_slider owl-carousel owl-theme">
             <div class="cover_item">
                 <div class="slider_content">
@@ -112,10 +99,9 @@
                                 <h2 class="cover-title">
                                     DMS MNITJ's 1st Edition,
                                 </h2>
-                                <center><img src="./src/images/logo.png" style="height:auto;" width="85%" height="35%" alt="FlairFiesta" /></center>
-                                <br>
+                                <img src="./src/images/logo.png"/>
                                 <!-- <strong style="font-family: 'Martel';" class="cover-xl-text">महाप्रबंधन पर्व'19</strong> -->
-                                <hr color="black ">
+                                <hr color="black">
                                 <p class="cover-date "></p>
                             </div>
                         </div>
@@ -123,9 +109,6 @@
                 </div>
             </div>
     </section>
-    <div class="cover_nav "></div>
-    <ul class="cover_dots ">
-    </ul>
     </div>
     <!--cover section slider end -->
 
@@ -135,8 +118,6 @@
     <section class="bg-img pt100 pb100" style="background-color:rgb(255, 228, 74);">
             <div class="container">
                     <div class="section_title">
-                        <br>
-                        <br>
                         <h3 class="title">
                            <center>About Us</center>
                         </h3>
@@ -146,7 +127,7 @@
                             <p>
                             Indian Institute of Information Technology Kota is a growing institute of national importance mentored by MNIT Jaipur. We encourage our students to make the best use of their skills to cope up with the fast-growing outside world, not only in terms of technology but in a border view to accept and face other challenges too. FlairFiesta is the annual cultural fest of IIIT Kota creating an aura of enjoyment and enlightenment.
                             </p>
-                            <a href="https://www.youtube.com/embed/vuhgHED13Xs" class=" btn btn-primary btn-rounded ">
+                            <!-- <a href="https://www.youtube.com/embed/vuhgHED13Xs" class=" btn btn-primary btn-rounded "> -->
                                 Teaser
                             </a>
                         </div>
@@ -154,10 +135,7 @@
                         <br>
                         <div class="col-12 col-md-6">
                             <p>
-                                    <video style="transform: rotate(90deg); margin-top: 2em;" autoplay muted loop class="tv" id="mVideo">
-                                            <source src="./src/images/banda.mov" type="video/mp4">
-                                            Your browser does not support HTML5 video.
-                                        </video>  
+                            
                             </p>
                         </div>
                     </div>
@@ -200,7 +178,7 @@
             <!--about the event end -->
     <!--footer start -->
 
-    <section class="bg-img pt100 pb100" style="background:linear-gradient(rgb(255, 112, 112),#0b031b);">
+    <section class="bg-img pt100 pb100" style="background:linear-gradient(rgb(255, 112, 112),#9763ff);">
             <div class="container">
                 <div class="section_title mb30">
                     <h3 class="title color-light">
@@ -277,7 +255,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-6 col-12">
                                     <p>
-                    Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Sanatan Shrivastava, sanatan.flairfiesta@gmail.com</a></p>
+                    Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Sanatan Shrivastava, sanatan.dmsfest@gmail.com</a></p>
                                 </div>
                                 <div class="col-12 col-md-6 ">
                                     <ul class="footer_menu">
@@ -398,6 +376,31 @@
         <script src="assets/js/wow.min.js"></script>
         <!-- Custom js -->
         <script src="assets/js/main.js"></script>
+        <style>
+                .home-cover{
+margin: 0;
+width: 100%;
+height: 100vh;
+/* font-family: "Exo", sans-serif; */
+color: #fff;
+background: linear-gradient(-45deg, #d40b0b ,rgb(255, 236, 127), rgb(255, 66, 66),rgb(187, 70, 2) 100%);
+background-size: 400% 400%;
+animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+
+            </style>
         </body>
         </html>
    

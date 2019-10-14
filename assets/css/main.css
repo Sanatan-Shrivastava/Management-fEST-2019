@@ -1796,7 +1796,7 @@ header.sticky_header {
 
 footer {
     padding: 50px 0 100px;
-    background-color: #0b031b;
+    background: linear-gradient(#9763ff,rgb(255, 253, 112));
 }
 
 footer .footer_box {
