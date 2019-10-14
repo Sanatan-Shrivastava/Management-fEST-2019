@@ -1,2 +1,2 @@
-# Mahaprabhandhan-Parva-19
-DMS-FEST
+# FlairFiesta-19
+IIITK's socio-cultural annual fest

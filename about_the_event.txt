@@ -1,0 +1,27 @@
+<!--about the event -->
+    <section class="pt100 pb100" style="background: rgb(248, 196, 205) ">
+        <div class="container">
+            <div class="section_title">
+                <h3 class="title ">
+                    About the event
+                </h3>
+            </div>
+            <div class="row justify-content-center">
+                <div id="iiit" class="col-12 col-md-6">
+                    <p>
+                        Indian Institute of Information Technology Kota is a growing institute of national importance mentored by MNIT Jaipur. We encourage our students to make the best use of their skills to cope up with the fast-growing outside world, not only in terms of
+                        technology but in a border view to accept and face other challenges too. FlairFiesta is the annual cultural fest of IIIT Kota creating an aura of enjoyment and enlightenment among everyone.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <p>
+                        We aim to expand it every year to reach greater heights and succeed with flying colors. Not only related to the technical field, but it has spread its wings to incubate other ideas too. These ideas range from dramatic events to other interesting events
+                        that include treasure hunts, literary events and much more. We hope it brings a chance in society.
+                    </p>
+                </div>
+            </div>
+            <!--event calender-->
+            <!--event calender end -->
+        </div>
+    </section>
+    <!--about the event end -->
