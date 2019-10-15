@@ -1,0 +1,153 @@
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+.right {
+    float: right;
+}
+/* ====== MIXINS ===== */
+.poster__heading, .poster__subheading {
+    text-align: center;
+}
+.poster__heading {
+    margin: 0 auto;
+}
+html {
+    font-family: 'Grenze';
+    font-size: 100%;
+}
+@media screen and (min-width: 31.25em) {
+    html {
+        font-size: 105%;
+   }
+}
+@media screen and (min-width: 50em) {
+    html {
+        font-size: 115%;
+   }
+}
+@media screen and (min-width: 75em) {
+    html {
+        font-size: 125%;
+   }
+}
+.btn--primary, .btn--comments {
+    display: inline;
+    text-decoration: none;
+    padding: 0.45em 1.25em;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    border-radius: 25px;
+    color: white;
+    font-family: 'Grenze';
+    transition: all 250ms ease;
+}
+.timeline-wrapper {
+    position: relative;
+    /* padding-bottom: 25em; */
+    background: linear-gradient(-45deg, #d40b0b, rgb(255, 228, 74) , rgb(255, 66, 66),rgb(187, 70, 2) 100%);
+background-size: 400% 400%;
+animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+.timeline-wrapper:after {
+    content: '';
+    display: block;
+    /* background-image: url('http://codepen.vincebrown.me/assets/images/white-mountains.jpg'); */
+    background: linear-gradient(-45deg, #d40b0b, rgb(255, 228, 74) , rgb(255, 66, 66),rgb(187, 70, 2) 100%);
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    background-position: 25% center;
+    z-index: -10;
+    bottom: 0;
+}
+.svg-timeline {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+@media screen and (min-width: 50em) {
+    .svg-timeline {
+        display: block;
+   }
+}
+.timeline {
+    transition: all 250ms ease;
+    width: 90%;
+    margin: 0 auto;
+}
+@media screen and (min-width: 31.25em) {
+    .timeline {
+        width: 80%;
+   }
+}
+@media screen and (min-width: 50em) {
+    .timeline {
+        width: 95%;
+   }
+}
+.timeline__item {
+    margin-bottom: 4em;
+    clear: both;
+}
+@media screen and (min-width: 50em) {
+    .timeline__item {
+        width: 40%;
+   }
+}
+.timeline__day {
+    font-weight: 600;
+    font-size: 1.6em;
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: 0.75em;
+}
+.timeline__day span {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: rgb(44, 29, 0);
+    text-transform: none;
+}
+.timeline__day-sum {
+    color: rgb(46, 2, 2);
+    font-weight: 300;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 1.5em;
+    line-height: 1.5;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+/* start commented backslash hack \*/
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+/* close commented backslash hack */
