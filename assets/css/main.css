@@ -272,12 +272,6 @@ img {
 } 
 
 @media (max-width: 768px) {
-    p{
-        
-    }
-}
-
-@media (max-width: 768px) {
     h1,
     .h1 {
         font-size: 28px;
@@ -1687,9 +1681,13 @@ header ul.menu li a.nav-link {
     font-weight: 400;
     display: block;
     text-transform: uppercase;
-    color: #d65600;
+    color: #000000;
 }
-
+@media (max-width:768px){
+    header ul.menu li a.nav-link{
+        color: rgb(243, 0, 0)
+    }
+}
 header ul.menu li a.nav-link:hover {
     color: #ffffff;
 }
@@ -1742,7 +1740,7 @@ header li ul.sub_menu li a:hover {
 }
 
 header.sticky_header {
-    background-color: rgb(241, 200, 124);
+    background: linear-gradient(-45deg, #ff5405, rgb(247, 210, 0));
     margin: 0;
     padding: 5px;
     -webkit-box-shadow: 0 0 42px rgba(0, 0, 0, 0.08);
