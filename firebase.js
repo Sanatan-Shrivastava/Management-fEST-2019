@@ -1,10 +1,12 @@
   // Initialize Firebase
-  var config = {
-      ".hide": "apiKey: AIzaSyDv0UcaJtqOOivuG4xWn4EHJHe8a7_D7ug",
-      authDomain: "flairfiesta19-3e2c1.firebaseapp.com",
-      databaseURL: "https://flairfiesta19-3e2c1.firebaseio.com",
-      projectId: "flairfiesta19-3e2c1",
-      storageBucket: "flairfiesta19-3e2c1.appspot.com",
-      messagingSenderId: "1075192204372"
+  const config = {
+    apiKey: "AIzaSyB_8XU769kdJtNqe9f1yBLyidK77NkD04I",
+    authDomain: "dms-fest.firebaseapp.com",
+    databaseURL: "https://dms-fest.firebaseio.com",
+    projectId: "dms-fest",
+    storageBucket: "dms-fest.appspot.com",
+    messagingSenderId: "563054154548",
+    appId: "1:563054154548:web:5893d4e9c896030335cb61",
+    measurementId: "G-5SVRGZDFDL"
   };
   firebase.initializeApp(config);

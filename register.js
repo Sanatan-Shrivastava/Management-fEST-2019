@@ -9,5 +9,7 @@ function onSignIn(googleUser) {
     $(".data").css("display","block");
     $("#email").text(profile.getEmail())
 
+    
+
 
 
