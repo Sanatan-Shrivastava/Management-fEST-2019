@@ -13,7 +13,7 @@
     
     form {
         width:400px;
-        height: auto;
+        height: 100vh;
         background:white;
         padding:2.5% 5% 2.5%;
         border-radius:2.5%;
@@ -22,6 +22,7 @@
     @media(max-width:767px){
         form{
             width: auto;
+            height: 100vh;
         }
     }
     
