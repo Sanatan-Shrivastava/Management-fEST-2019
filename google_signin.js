@@ -57,6 +57,9 @@ function onSignIn(googleUser) {
         profile.className = "show";
         signOutButton.className = "show";
 
+        window.alert(user);
+        window.alert(user.getEmail());
+        window.alert(user.email);
         emailContainer.innerHTML = "Email " + user.email;
 
         fillotherdetails(user);
@@ -90,12 +93,26 @@ function onSignIn(googleUser) {
           window.alert(userDetails);
           if(!userDetails){
               window.alert("going to show id container");
-              document.getElementById("create-id-container").className = "show";
+              showCreateIdContainer();
           }else{
-              document.getElementById("details-container").className = "show"
-              document.getElementById("name").innerHTML = user.displayName;
+            document.getElementById("name").innerHTML = user.displayName;
             //   document.getElementById("name").innerHTML = userDetails.name;
             //   document.getElementById("festid").innerHTML = userDetails.festid;
-          }
+            hideCreateIdContainer();
+            showDetailsContainer();
+            document.getElementById("email").innerHTML = user.email;
+        }
       });
+  }
+  function hideCreateIdContainer(){
+    document.getElementById("create-id-container").className = "hide";
+  }
+  function showCreateIdContainer(){
+    document.getElementById("create-id-container").className = "show";
+  }
+  function hideDetailsContainer(){
+    document.getElementById("details-container").className = "hide";
+  }
+  function showDetailsContainer(){
+    document.getElementById("details-container").className = "show";
   }
