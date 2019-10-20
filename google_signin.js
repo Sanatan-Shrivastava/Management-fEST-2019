@@ -62,7 +62,7 @@ function onSignIn(googleUser) {
             // window.alert(user.getId());
             // window.alert(user.getEmail());
             // window.alert(user.getName());
-            emailContainer.innerHTML = "Email " + user.getEmail();
+            emailContainer.innerHTML = "Email " + loginUser.getEmail();
 
             fillotherdetails(firebaseUser);
             console.log('User already signed-in Firebase.');

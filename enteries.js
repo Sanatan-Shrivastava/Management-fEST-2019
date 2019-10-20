@@ -1,39 +1,40 @@
 function setData() {
     try{
         //Initialize Elements
-    // var db = firebase.database();
-    // var mName = document.getElementById("name");
-    // var mCollege = document.getElementById("college");
-    // var mNumber = document.getElementById("number");
-    // var mMnitians = document.getElementById("mnitians");
+        var user = firebase.auth().currentUser;
+        var db = firebase.database();
+    var mName = document.getElementById("name");
+    var mCollege = document.getElementById("college");
+    var mNumber = document.getElementById("number");
+    var mMnitians = document.getElementById("mnitians");
 
-    // //Store value in string
-    // var name = mName.value;
-    // var college = mCollege.value;
-    // var number = mNumber.value;
-    // var mnitians = mMnitians.value;
+    //Store value in string
+    var name = mName.value;
+    var college = mCollege.value;
+    var number = mNumber.value;
+    var mnitians = mMnitians.value;
 
-    // //Some hardcoded data
-    // //Todo-
-    // //1) Add real festid
-    // var festid = "fest@1234"
+    //Some hardcoded data
+    //Todo-
+    //1) Add real festid
+    var festid = "fest@1234"
     
-    // // var uniqueId = "uniqueId";
-    // var uniqueId = "waiting for id";
+    // var uniqueId = "uniqueId";
+    var uniqueId = user.uid;
     
-    var user = firebase.auth().currentUser;
         window.alert(user.uid);
 
-    // uniqueId = profile.getId();
-    //         var userDetails = {
-    //             name: name,
-    //             college: college,
-    //             phone: number,
-    //             mnitians: mnitians,
-    //             festid: festid
-    //         };
+
+    uniqueId = profile.getId();
+            var userDetails = {
+                name: name,
+                college: college,
+                phone: number,
+                mnitians: mnitians,
+                festid: festid
+            };
         
-    // db.ref('users/' + uniqueId).set(userDetails);
+    db.ref('users/' + uniqueId).set(userDetails);
     // gapi.load('auth2', function() {
     //     auth2 = gapi.auth2.init({
     //       client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
