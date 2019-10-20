@@ -84,7 +84,7 @@ function onSignIn(googleUser) {
   }
 
   function fillotherdetails(user,firebaseUser){
-      var id = user.uid;
+      var id = firebaseUser.uid;
       var db = firebase.database();
       var ref = db.ref('users/'+ id);
 
