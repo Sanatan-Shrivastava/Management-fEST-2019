@@ -4,7 +4,10 @@
 //     firebase.auth().signInWithRedirect(provider);
 //     //   window.alert(typeof(start));
 // }
-var loginUser = null;
+
+var globalVariable={
+    loginUser: null
+ };
 
 function onSignIn(googleUser) {
     console.log('Google Auth Response', googleUser);
@@ -18,7 +21,7 @@ function onSignIn(googleUser) {
                 googleUser.getAuthResponse().id_token);
             // Sign in with credential from the Google user.
             firebase.auth().signInWithCredential(credential).then(function (result) {
-                loginUser = googleUser.getBasicProfile();
+                globalVariable.loginUser = googleUser.getBasicProfile();
                 // console.log("Result ", result);
                 // console.log("User", user);
                 // console.log("Success fully signed in");
@@ -33,7 +36,7 @@ function onSignIn(googleUser) {
                 profile.className = "show";
                 signOutButton.className = "show";
 
-                emailContainer.innerHTML = "Email " + loginUser.getEmail();
+                emailContainer.innerHTML = "Email " + globalVariable.loginUser.getEmail();
 
                 fillotherdetails(result.user);
             })
@@ -49,7 +52,7 @@ function onSignIn(googleUser) {
                     // ...
                 });
         } else {
-            loginUser = googleUser.getBasicProfile();
+            globalVariable.loginUser = googleUser.getBasicProfile();
 
             var signInButton = document.getElementById("sign-in-button");
             var profile = document.getElementById("profile");
@@ -143,7 +146,7 @@ function setData() {
     var festid = "fest@1234"
 
     // var uniqueId = "uniqueId";
-    var uniqueId = loginUser.getId();
+    var uniqueId = globalVariable.loginUser.getId();
     var userDetails = {
         name: name,
         college: college,
