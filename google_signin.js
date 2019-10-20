@@ -123,7 +123,8 @@ function showDetailsContainer() {
     document.getElementById("details-container").className = "show";
 }
 function setData() {
-    //Initialize Elements
+    try{
+        //Initialize Elements
     var db = firebase.database();
     var mName = document.getElementById("name");
     var mCollege = document.getElementById("college");
@@ -152,5 +153,16 @@ function setData() {
     };
 
     db.ref('users/' + uniqueId).set(userDetails);
-    location.href = './register2.html';
+    // location.href = './register2.html';
+    }catch(error){
+        // Handle Errors here.
+        // var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        // var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        // var credential = error.credential;
+        window.alert(errorMessage);
+        // ...
+    }
 }
