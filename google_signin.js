@@ -16,12 +16,8 @@ function onSignIn(googleUser) {
             googleUser.getAuthResponse().id_token);
         // Sign in with credential from the Google user.
         firebase.auth().signInWithCredential(credential).then(function(result) {
-            window.alert("result");
-            var txt="";
-            for (var x in result){
-                txt += result[x];
-            }
-            window.alert(txt);
+            var user = result.user;
+            window.alert("Hello, ",user.displayName,"...\n You're Logged in.");
             console.log("Result ", result);
             console.log("Success fully signed in");
         })
