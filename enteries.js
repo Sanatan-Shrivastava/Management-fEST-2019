@@ -38,7 +38,8 @@ function setData() {
             window.alert(error.message)
         }
     );
-    location.href = './register2.html';
+    document.getElementById("go-back-button").className = "show";
+    // location.href = './register2.html';
     // gapi.load('auth2', function() {
     //     auth2 = gapi.auth2.init({
     //       client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
