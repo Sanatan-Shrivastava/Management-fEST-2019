@@ -89,6 +89,7 @@ function onSignIn(googleUser) {
           userDetails = snapshot.val();
           window.alert(userDetails);
           if(userDetails == null){
+              window.alert("going to show id container");
               document.getElementById("create-id-container") = "show";
           }else{
               document.getElementById("details-container").className = "show"
