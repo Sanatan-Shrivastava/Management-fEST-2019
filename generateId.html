@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample FirebaseUI App</title>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
+</head>
+
+<body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <h1>Register</h1>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="name" id="name"></input></td>
+        </tr>
+        <tr>
+            <td>College:</td>
+            <td><input type="name" id="college"></input></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><input type="number" id="number"></input></td>
+        </tr>
+        <tr>
+            <td>Mnitian?:</td>
+            <td><input type="name" id="mnitians"></input></td>
+        </tr>
+    </table>
+    <button id="submit" onclick="setData()">Submit</button>
+    <script src="./firebase.js"></script>
+    <script src="google_signin.js"></script>
+</body>
+
+</html>

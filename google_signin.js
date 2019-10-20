@@ -4,123 +4,124 @@
 //     firebase.auth().signInWithRedirect(provider);
 //     //   window.alert(typeof(start));
 // }
-var loginUser = null;
-function onSignIn(googleUser) {
-    console.log('Google Auth Response', googleUser);
-    // We need to register an Observer on Firebase Auth to make sure auth is initialized.
-    var unsubscribe = firebase.auth().onAuthStateChanged(function (firebaseUser) {
-        unsubscribe();
-        // Check if we are already signed-in Firebase with the correct user.
-        if (!isUserEqual(googleUser, firebaseUser)) {
-            // Build Firebase credential with the Google ID token.
-            var credential = firebase.auth.GoogleAuthProvider.credential(
-                googleUser.getAuthResponse().id_token);
-            // Sign in with credential from the Google user.
-            firebase.auth().signInWithCredential(credential).then(function (result) {
-                loginUser = googleUser.getBasicProfile();
-                // console.log("Result ", result);
-                // console.log("User", user);
-                // console.log("Success fully signed in");
+// var loginUser = null;
 
-                //initializing var
-                var signInButton = document.getElementById("sign-in-button");
-                var profile = document.getElementById("profile");
-                var emailContainer = document.getElementById("email");
-                var signOutButton = document.getElementById("sign-out-button");
+// function onSignIn(googleUser) {
+//     console.log('Google Auth Response', googleUser);
+//     // We need to register an Observer on Firebase Auth to make sure auth is initialized.
+//     var unsubscribe = firebase.auth().onAuthStateChanged(function (firebaseUser) {
+//         unsubscribe();
+//         // Check if we are already signed-in Firebase with the correct user.
+//         if (!isUserEqual(googleUser, firebaseUser)) {
+//             // Build Firebase credential with the Google ID token.
+//             var credential = firebase.auth.GoogleAuthProvider.credential(
+//                 googleUser.getAuthResponse().id_token);
+//             // Sign in with credential from the Google user.
+//             firebase.auth().signInWithCredential(credential).then(function (result) {
+//                 loginUser = googleUser.getBasicProfile();
+//                 // console.log("Result ", result);
+//                 // console.log("User", user);
+//                 // console.log("Success fully signed in");
 
-                signInButton.className = "g-signin2 hide";
-                profile.className = "show";
-                signOutButton.className = "show";
+//                 //initializing var
+//                 var signInButton = document.getElementById("sign-in-button");
+//                 var profile = document.getElementById("profile");
+//                 var emailContainer = document.getElementById("email");
+//                 var signOutButton = document.getElementById("sign-out-button");
 
-                emailContainer.innerHTML = "Email " + loginUser.getEmail();
+//                 signInButton.className = "g-signin2 hide";
+//                 profile.className = "show";
+//                 signOutButton.className = "show";
 
-                fillotherdetails(result.user);
-            })
-                .catch(function (error) {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // The email of the user's account used.
-                    var email = error.email;
-                    // The firebase.auth.AuthCredential type that was used.
-                    var credential = error.credential;
-                    window.alert(errorMessage);
-                    // ...
-                });
-        } else {
-            loginUser = googleUser.getBasicProfile();
+//                 emailContainer.innerHTML = "Email " + loginUser.getEmail();
 
-            var signInButton = document.getElementById("sign-in-button");
-            var profile = document.getElementById("profile");
-            var emailContainer = document.getElementById("email");
-            var signOutButton = document.getElementById("sign-out-button");
+//                 fillotherdetails(result.user);
+//             })
+//                 .catch(function (error) {
+//                     // Handle Errors here.
+//                     var errorCode = error.code;
+//                     var errorMessage = error.message;
+//                     // The email of the user's account used.
+//                     var email = error.email;
+//                     // The firebase.auth.AuthCredential type that was used.
+//                     var credential = error.credential;
+//                     window.alert(errorMessage);
+//                     // ...
+//                 });
+//         } else {
+//             loginUser = googleUser.getBasicProfile();
 
-            signInButton.className = "g-signin2 hide";
-            profile.className = "show";
-            signOutButton.className = "show";
+//             var signInButton = document.getElementById("sign-in-button");
+//             var profile = document.getElementById("profile");
+//             var emailContainer = document.getElementById("email");
+//             var signOutButton = document.getElementById("sign-out-button");
 
-            // window.alert(user.getId());
-            // window.alert(user.getEmail());
-            // window.alert(user.getName());
-            emailContainer.innerHTML = "Email " + user.getEmail();
+//             signInButton.className = "g-signin2 hide";
+//             profile.className = "show";
+//             signOutButton.className = "show";
 
-            fillotherdetails(user, firebaseUser);
-            console.log('User already signed-in Firebase.');
-            // console.log("Google User", googleUser);
-            console.log("Firebase User", firebaseUser);
-        }
-    });
-}
-function isUserEqual(googleUser, firebaseUser) {
-    if (firebaseUser) {
-        var providerData = firebaseUser.providerData;
-        for (var i = 0; i < providerData.length; i++) {
-            if (providerData[i].providerId === firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
-                providerData[i].uid === googleUser.getBasicProfile().getId()) {
-                // We don't need to reauth the Firebase connection.
-                return true;
-            }
-        }
-    }
-    return false;
-}
+//             // window.alert(user.getId());
+//             // window.alert(user.getEmail());
+//             // window.alert(user.getName());
+//             emailContainer.innerHTML = "Email " + user.getEmail();
 
-function fillotherdetails(firebaseUser) {
-    var id = firebaseUser.uid;
-    var db = firebase.database();
-    var ref = db.ref('users/' + id);
+//             fillotherdetails(user, firebaseUser);
+//             console.log('User already signed-in Firebase.');
+//             // console.log("Google User", googleUser);
+//             console.log("Firebase User", firebaseUser);
+//         }
+//     });
+// }
+// function isUserEqual(googleUser, firebaseUser) {
+//     if (firebaseUser) {
+//         var providerData = firebaseUser.providerData;
+//         for (var i = 0; i < providerData.length; i++) {
+//             if (providerData[i].providerId === firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
+//                 providerData[i].uid === googleUser.getBasicProfile().getId()) {
+//                 // We don't need to reauth the Firebase connection.
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
 
-    ref.on('value', function (snapshot) {
-        userDetails = snapshot.val();
-        console.log("id", id);
-        //   console.log("uid",user.getUId());
-        //   console.log("userDetails", userDetails);
-        //   window.alert(userDetails);
-        if (!userDetails) {
-            //   window.alert("going to show id container");
-            showCreateIdContainer();
-        } else {
-            // window.alert("show details container");
-            // document.getElementById("name").innerHTML = user.getName();
-            document.getElementById("name").innerHTML = userDetails.name;
-            document.getElementById("festid").innerHTML = userDetails.festid;
-            hideCreateIdContainer();
-            showDetailsContainer();
-        }
-    });
-}
-function hideCreateIdContainer() {
-    document.getElementById("create-id-container").className = "hide";
-}
-function showCreateIdContainer() {
-    document.getElementById("create-id-container").className = "show";
-}
-function hideDetailsContainer() {
-    document.getElementById("details-container").className = "hide";
-}
-function showDetailsContainer() {
-    document.getElementById("details-container").className = "show";
-}
+// function fillotherdetails(firebaseUser) {
+//     var id = firebaseUser.uid;
+//     var db = firebase.database();
+//     var ref = db.ref('users/' + id);
+
+//     ref.on('value', function (snapshot) {
+//         userDetails = snapshot.val();
+//         console.log("id", id);
+//         //   console.log("uid",user.getUId());
+//         //   console.log("userDetails", userDetails);
+//         //   window.alert(userDetails);
+//         if (!userDetails) {
+//             //   window.alert("going to show id container");
+//             showCreateIdContainer();
+//         } else {
+//             // window.alert("show details container");
+//             // document.getElementById("name").innerHTML = user.getName();
+//             document.getElementById("name").innerHTML = userDetails.name;
+//             document.getElementById("festid").innerHTML = userDetails.festid;
+//             hideCreateIdContainer();
+//             showDetailsContainer();
+//         }
+//     });
+// }
+// function hideCreateIdContainer() {
+//     document.getElementById("create-id-container").className = "hide";
+// }
+// function showCreateIdContainer() {
+//     document.getElementById("create-id-container").className = "show";
+// }
+// function hideDetailsContainer() {
+//     document.getElementById("details-container").className = "hide";
+// }
+// function showDetailsContainer() {
+//     document.getElementById("details-container").className = "show";
+// }
 function setData() {
     //Initialize Elements
     var db = firebase.database();
@@ -140,9 +141,9 @@ function setData() {
     //1) Add real festid
     var festid = "fest@1234"
 
-    var uniqueId = loginUser.getId();
+    var uniqueId = "uniqueId";
+    // var uniqueId = loginUser.getId();
     var userDetails = {
-        email: email,
         name: name,
         college: college,
         phone: number,
@@ -150,6 +151,6 @@ function setData() {
         festid: festid
     };
 
-    db.ref('Users/' + uniqueId).set(userDetails);
-    location.href = './register.html';
+    db.ref('users/' + uniqueId).set(userDetails);
+    location.href = './register2.html';
 }
