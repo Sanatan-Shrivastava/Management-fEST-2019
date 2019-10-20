@@ -31,7 +31,7 @@ function onSignIn(googleUser) {
             profile.className = "show";
             signOutButton.className = "show";
 
-            emailContainer.innerHTML = "Email " + user.email;
+            emailContainer.innerHTML = "Email " + user.getEmail();
         })
         .catch(function(error) {
           // Handle Errors here.
@@ -45,7 +45,22 @@ function onSignIn(googleUser) {
           // ...
         });
       } else {
+        var user = googleUser.getBasicProfile();
+        var signInButton = document.getElementById("sign-in-button");
+        var profile = document.getElementById("profile");
+        var emailContainer = document.getElementById("email");
+        var signOutButton = document.getElementById("sign-out-button");
+        
+        signInButton.className = "g-signin2 hide";
+        profile.className = "show";
+        signOutButton.className = "show";
+
+        emailContainer.innerHTML = "Email " + user.getEmail();
+
+
         console.log('User already signed-in Firebase.');
+        // console.log("Google User", googleUser);
+        console.log("Firebase User", firebaseUser);
       }
     });
   }
