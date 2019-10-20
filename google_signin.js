@@ -17,9 +17,21 @@ function onSignIn(googleUser) {
         // Sign in with credential from the Google user.
         firebase.auth().signInWithCredential(credential).then(function(result) {
             var user = result.user;
-            console.log("Result ", result);
-            console.log("User", user);
-            console.log("Success fully signed in");
+            // console.log("Result ", result);
+            // console.log("User", user);
+            // console.log("Success fully signed in");
+            
+            //initializing var
+            var signInButton = document.getElementById("sign-in-button");
+            var profile = document.getElementById("profile");
+            var emailContainer = document.getElementById("email");
+            var signOutButton = document.getElementById("sign-out-button");
+            
+            signInButton.className = "g-signin2 hide";
+            profile.className = "show";
+            signOutButton.className = "show";
+
+            emailContainer.innerHTML = "Email " + user.email;
         })
         .catch(function(error) {
           // Handle Errors here.

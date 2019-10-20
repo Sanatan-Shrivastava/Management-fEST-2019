@@ -60,32 +60,17 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="teaser.css">
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
 </head>
-<!-- <style>
-    .data {
-        display: none;
-    }
-
-    .g-signin2 {
-        margin-top: 25em;
-    }
-</style> -->
-
 <body>
-    <center>
-        <!-- <button onclick="start()">Signin</button> -->
-        <div class="g-signin2" style="margin-top: 100px;" data-onsuccess="onSignIn"></div>
-        <a href="#" style="margin-top: 200px" onclick="signOut();">Sign out</a>
-        <script>
-            function signOut() {
-                var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-                    console.log('User signed out.');
-                });
-            }
-        </script>
-        <script src="./google_signin.js"></script>
-    </center>
     <header class="header navbar fixed-top navbar-expand-md">
         <div class="container">
             <a class="navbar-brand logo" href="index.html">
@@ -123,6 +108,38 @@
             </div>
         </div>
     </header>
+    <center>
+        <!-- <button onclick="start()">Signin</button> -->
+        <div id="sign-in-button" class="g-signin2 show" style="margin-top: 100px;" data-onsuccess="onSignIn"></div>
+        <div id="profile" class="hide">
+            <h1>Profile</h1>
+            <p id="email">Email: </p>
+            <div id="create-id-container" class="hide">
+                <p>Please create your fest id</p>
+                <button id="create-festid-button">Create Festid</button>
+            </div>
+            <div id="details-container" class="hide">
+                <p id="name">Name: shaktiraj Daudra</p>
+                <p id="festid">Festid: dmsFest123</p>
+            </div>
+            <a id="sign-out-button" class="hide" href="#" onclick="signOut();">Sign out</a>
+        </div>
+        <script>
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    document.getElementById("profile").className = "hide";
+                    document.getElementById("sign-in-button").className = "g-signin2 show";
+                    document.getElementById("sign-out-button").className = "hide";
+                    document.getElementById("create-id-container").className = "hide";
+                    document.getElementById("details-container").className = "hide";
+                    console.log('User signed out.');
+                });
+            }
+        </script>
+        <script src="./google_signin.js"></script>
+    </center>
+
 </body>
 
 </html>
