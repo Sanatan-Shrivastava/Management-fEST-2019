@@ -1,26 +1,26 @@
 function setData() {
     try{
         //Initialize Elements
-    // var db = firebase.database();
-    // var mName = document.getElementById("name");
-    // var mCollege = document.getElementById("college");
-    // var mNumber = document.getElementById("number");
-    // var mMnitians = document.getElementById("mnitians");
+    var db = firebase.database();
+    var mName = document.getElementById("name");
+    var mCollege = document.getElementById("college");
+    var mNumber = document.getElementById("number");
+    var mMnitians = document.getElementById("mnitians");
 
-    // //Store value in string
-    // var name = mName.value;
-    // var college = mCollege.value;
-    // var number = mNumber.value;
-    // var mnitians = mMnitians.value;
+    //Store value in string
+    var name = mName.value;
+    var college = mCollege.value;
+    var number = mNumber.value;
+    var mnitians = mMnitians.value;
 
-    // //Some hardcoded data
-    // //Todo-
-    // //1) Add real festid
-    // var festid = "fest@1234"
-
-    // var uniqueId = "uniqueId";
-    // var uniqueId = loginUser.getId();
+    //Some hardcoded data
+    //Todo-
+    //1) Add real festid
+    var festid = "fest@1234"
     
+    // var uniqueId = "uniqueId";
+    var uniqueId = "waiting for id";
+
     gapi.load('auth2', function() {
         auth2 = gapi.auth2.init({
           client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
@@ -36,19 +36,22 @@ function setData() {
             console.log('Family Name: ' + profile.getFamilyName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail());
+            uniqueId - profile.getId();
+            var userDetails = {
+                name: name,
+                college: college,
+                phone: number,
+                mnitians: mnitians,
+                festid: festid
+            };
+        
+            db.ref('users/' + uniqueId).set(userDetails);
+            location.href = './register2.html';
+        }else{
+            window.alert("not logged in");
         }
+
     });
-
-    // var userDetails = {
-    //     name: name,
-    //     college: college,
-    //     phone: number,
-    //     mnitians: mnitians,
-    //     festid: festid
-    // };
-
-    // db.ref('users/' + uniqueId).set(userDetails);
-    // location.href = './register2.html';
     }catch(error){
         // Handle Errors here.
         // var errorCode = error.code;
