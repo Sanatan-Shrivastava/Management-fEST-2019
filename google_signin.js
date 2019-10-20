@@ -32,6 +32,8 @@ function onSignIn(googleUser) {
             signOutButton.className = "show";
 
             emailContainer.innerHTML = "Email " + user.email;
+
+            fillotherdetails(user);
         })
         .catch(function(error) {
           // Handle Errors here.
@@ -57,7 +59,7 @@ function onSignIn(googleUser) {
 
         emailContainer.innerHTML = "Email " + user.email;
 
-
+        fillotherdetails(user);
         console.log('User already signed-in Firebase.');
         // console.log("Google User", googleUser);
         console.log("Firebase User", firebaseUser);
@@ -76,4 +78,23 @@ function onSignIn(googleUser) {
       }
     }
     return false;
+  }
+
+  function fillotherdetails(user){
+      var id = user.uid;
+      var db = firebase.database();
+      var ref = db.ref('users/'+ id);
+
+      ref.on('value',   function(snapshot){
+          userDetails = snapshot.val();
+          window.alert(userDetails);
+          if(userDetails == null){
+              document.getElementById("create-id-container") = "show";
+          }else{
+              document.getElementById("details-container").className = "show"
+              document.getElementById("name").innerHTML = user.displayName;
+            //   document.getElementById("name").innerHTML = userDetails.name;
+            //   document.getElementById("festid").innerHTML = userDetails.festid;
+          }
+      });
   }
