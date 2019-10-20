@@ -33,7 +33,11 @@ function setData() {
                 festid: festid
             };
         
-    db.ref('users/' + user.uid).set(userDetails);
+    db.ref('users/' + user.uid).set(userDetails).catch(
+        function(error){
+            window.alert(error.message)
+        }
+    );
     location.href = './register2.html';
     // gapi.load('auth2', function() {
     //     auth2 = gapi.auth2.init({
