@@ -25,7 +25,7 @@ function setData() {
         window.alert(user.uid);
 
 
-    uniqueId = profile.getId();
+    // uniqueId = profile.getId();
             var userDetails = {
                 name: name,
                 college: college,
