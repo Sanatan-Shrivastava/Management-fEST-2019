@@ -1,0 +1,3 @@
+var globalVariable={
+    loginUser: null
+ };

@@ -5,10 +5,6 @@
 //     //   window.alert(typeof(start));
 // }
 
-var globalVariable={
-    loginUser: null
- };
-
 function onSignIn(googleUser) {
     console.log('Google Auth Response', googleUser);
     // We need to register an Observer on Firebase Auth to make sure auth is initialized.
@@ -21,7 +17,7 @@ function onSignIn(googleUser) {
                 googleUser.getAuthResponse().id_token);
             // Sign in with credential from the Google user.
             firebase.auth().signInWithCredential(credential).then(function (result) {
-                globalVariable.loginUser = googleUser.getBasicProfile();
+                var loginUser = googleUser.getBasicProfile();
                 // console.log("Result ", result);
                 // console.log("User", user);
                 // console.log("Success fully signed in");
@@ -36,7 +32,7 @@ function onSignIn(googleUser) {
                 profile.className = "show";
                 signOutButton.className = "show";
 
-                emailContainer.innerHTML = "Email " + globalVariable.loginUser.getEmail();
+                emailContainer.innerHTML = "Email " + loginUser.getEmail();
 
                 fillotherdetails(result.user);
             })
@@ -52,7 +48,7 @@ function onSignIn(googleUser) {
                     // ...
                 });
         } else {
-            globalVariable.loginUser = googleUser.getBasicProfile();
+            var loginUser = googleUser.getBasicProfile();
 
             var signInButton = document.getElementById("sign-in-button");
             var profile = document.getElementById("profile");
@@ -145,8 +141,8 @@ function setData() {
     //1) Add real festid
     var festid = "fest@1234"
 
-    // var uniqueId = "uniqueId";
-    var uniqueId = globalVariable.loginUser.getId();
+    var uniqueId = "uniqueId";
+    // var uniqueId = loginUser.getId();
     var userDetails = {
         name: name,
         college: college,
