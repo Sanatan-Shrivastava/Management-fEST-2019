@@ -57,9 +57,9 @@ function onSignIn(googleUser) {
         profile.className = "show";
         signOutButton.className = "show";
 
-        window.alert(user.getId());
-        window.alert(user.getEmail());
-        window.alert(user.getName());
+        // window.alert(user.getId());
+        // window.alert(user.getEmail());
+        // window.alert(user.getName());
         emailContainer.innerHTML = "Email " + user.getEmail();
 
         fillotherdetails(user);
@@ -90,11 +90,14 @@ function onSignIn(googleUser) {
 
       ref.on('value',   function(snapshot){
           userDetails = snapshot.val();
-          window.alert(userDetails);
+          console.log("id", id);
+          console.log("userDetails", userDetails);
+        //   window.alert(userDetails);
           if(!userDetails){
               window.alert("going to show id container");
               showCreateIdContainer();
           }else{
+            window.alert("show details container");
             document.getElementById("name").innerHTML = user.displayName;
             //   document.getElementById("name").innerHTML = userDetails.name;
             //   document.getElementById("festid").innerHTML = userDetails.festid;
