@@ -35,6 +35,7 @@ function setData() {
             };
         
     db.ref('users/' + uniqueId).set(userDetails);
+    location.href = './register2.html';
     // gapi.load('auth2', function() {
     //     auth2 = gapi.auth2.init({
     //       client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
@@ -51,7 +52,6 @@ function setData() {
     //         console.log('Image URL: ' + profile.getImageUrl());
     //         console.log('Email: ' + profile.getEmail());
             
-    //         // location.href = './register2.html';
     //     }else{
     //         window.alert("not logged in");
     //     }
