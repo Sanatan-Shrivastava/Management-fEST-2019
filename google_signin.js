@@ -33,7 +33,7 @@ function onSignIn(googleUser) {
 
             emailContainer.innerHTML = "Email " + user.getEmail();
 
-            fillotherdetails(user);
+            fillotherdetails(user,firebaseUser);
         })
         .catch(function(error) {
           // Handle Errors here.
@@ -62,7 +62,7 @@ function onSignIn(googleUser) {
         // window.alert(user.getName());
         emailContainer.innerHTML = "Email " + user.getEmail();
 
-        fillotherdetails(user);
+        fillotherdetails(user,firebaseUser);
         console.log('User already signed-in Firebase.');
         // console.log("Google User", googleUser);
         console.log("Firebase User", firebaseUser);
@@ -83,8 +83,8 @@ function onSignIn(googleUser) {
     return false;
   }
 
-  function fillotherdetails(user){
-      var id = user.getId();
+  function fillotherdetails(user,firebaseUser){
+      var id = user.uid;
       var db = firebase.database();
       var ref = db.ref('users/'+ id);
 
