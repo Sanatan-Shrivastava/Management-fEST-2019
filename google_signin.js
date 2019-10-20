@@ -16,7 +16,7 @@ function onSignIn(googleUser) {
             googleUser.getAuthResponse().id_token);
         // Sign in with credential from the Google user.
         firebase.auth().signInWithCredential(credential).then(function(result) {
-            var user = result.user;
+            var user = googleUser.getBasicProfile();
             // console.log("Result ", result);
             // console.log("User", user);
             // console.log("Success fully signed in");
@@ -31,7 +31,7 @@ function onSignIn(googleUser) {
             profile.className = "show";
             signOutButton.className = "show";
 
-            emailContainer.innerHTML = "Email " + user.email;
+            emailContainer.innerHTML = "Email " + user.getEmail();
 
             fillotherdetails(user);
         })
@@ -84,13 +84,14 @@ function onSignIn(googleUser) {
   }
 
   function fillotherdetails(user){
-      var id = user.uid;
+      var id = user.getId();
       var db = firebase.database();
       var ref = db.ref('users/'+ id);
 
       ref.on('value',   function(snapshot){
           userDetails = snapshot.val();
           console.log("id", id);
+          console.log("uid",user.getUId());
           console.log("userDetails", userDetails);
         //   window.alert(userDetails);
           if(!userDetails){
@@ -103,7 +104,6 @@ function onSignIn(googleUser) {
             //   document.getElementById("festid").innerHTML = userDetails.festid;
             hideCreateIdContainer();
             showDetailsContainer();
-            document.getElementById("email").innerHTML = user.email;
         }
       });
   }
