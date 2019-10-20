@@ -91,7 +91,7 @@ function onSignIn(googleUser) {
       ref.on('value',   function(snapshot){
           userDetails = snapshot.val();
           console.log("id", id);
-          console.log("uid",user.getUId());
+        //   console.log("uid",user.getUId());
           console.log("userDetails", userDetails);
         //   window.alert(userDetails);
           if(!userDetails){
