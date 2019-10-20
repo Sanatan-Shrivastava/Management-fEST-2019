@@ -31,7 +31,7 @@ function onSignIn(googleUser) {
             profile.className = "show";
             signOutButton.className = "show";
 
-            emailContainer.innerHTML = "Email " + user.getEmail();
+            emailContainer.innerHTML = "Email " + user.email;
         })
         .catch(function(error) {
           // Handle Errors here.
@@ -55,7 +55,7 @@ function onSignIn(googleUser) {
         profile.className = "show";
         signOutButton.className = "show";
 
-        emailContainer.innerHTML = "Email " + user.getEmail();
+        emailContainer.innerHTML = "Email " + user.email;
 
 
         console.log('User already signed-in Firebase.');
