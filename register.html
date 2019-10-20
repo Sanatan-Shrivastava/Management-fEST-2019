@@ -20,9 +20,11 @@
     <meta name="keywords"
         content="Mahaprabhandhan-Parva,management,Rajasthan,fest,Sanatan Shrivastava,sanatan,shrivastava,event,events,2019,2k19" />
     <meta name="Resource-type" content="Document" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id"
         content="563054154548-1052l9kng0thf5haspm9g425togsqfld.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-cookiepolicy" content="single_host_origin">
+    <meta name="google-signin-scope" content="profile email">
     <!-- Chrome, Firefox OS, Opera and Vivaldi -->
     <meta name="theme-color" content="#000000">
     <!-- Windows Phone -->
@@ -71,9 +73,9 @@
 
 <body>
     <center>
-        <button onclick="start()">Signin</button>
+        <!-- <button onclick="start()">Signin</button> -->
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <script src="./google_signin.js"></script>
-        <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
     </center>
     <header class="header navbar fixed-top navbar-expand-md">
         <div class="container">
