@@ -20,7 +20,6 @@ function setData() {
     var festid = "fest@1234"
     
     // var uniqueId = "uniqueId";
-    var uniqueId = user.uid;
     
         window.alert(user.uid);
 
@@ -34,7 +33,7 @@ function setData() {
                 festid: festid
             };
         
-    db.ref('users/' + uniqueId).set(userDetails);
+    db.ref('users/' + user.uid).set(userDetails);
     location.href = './register2.html';
     // gapi.load('auth2', function() {
     //     auth2 = gapi.auth2.init({
