@@ -1,7 +1,8 @@
 function setData() {
     try{
         //Initialize Elements
-    var db = firebase.database();
+        var user = firebase.auth().currentUser;
+        var db = firebase.database();
     var mName = document.getElementById("name");
     var mCollege = document.getElementById("college");
     var mNumber = document.getElementById("number");
@@ -19,24 +20,11 @@ function setData() {
     var festid = "fest@1234"
     
     // var uniqueId = "uniqueId";
-    var uniqueId = "waiting for id";
+    
+        window.alert(user.uid);
 
-    gapi.load('auth2', function() {
-        auth2 = gapi.auth2.init({
-          client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
-          fetch_basic_profile: false,
-          scope: 'profile'
-        });
 
-        if (auth2.isSignedIn.get()) {
-            var profile = auth2.currentUser.get().getBasicProfile();
-            console.log('ID: ' + profile.getId());
-            console.log('Full Name: ' + profile.getName());
-            console.log('Given Name: ' + profile.getGivenName());
-            console.log('Family Name: ' + profile.getFamilyName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail());
-            uniqueId = profile.getId();
+    // uniqueId = profile.getId();
             var userDetails = {
                 name: name,
                 college: college,
@@ -45,13 +33,34 @@ function setData() {
                 festid: festid
             };
         
-            db.ref('users/' + uniqueId).set(userDetails);
-            location.href = './register2.html';
-        }else{
-            window.alert("not logged in");
+    db.ref('users/' + user.uid).set(userDetails).catch(
+        function(error){
+            window.alert(error.message)
         }
+    );
+    document.getElementById("go-back-button").className = "show";
+    // location.href = './register2.html';
+    // gapi.load('auth2', function() {
+    //     auth2 = gapi.auth2.init({
+    //       client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
+    //       fetch_basic_profile: false,
+    //       scope: 'profile'
+    //     });
 
-    });
+    //     if (auth2.isSignedIn.get()) {
+    //         var profile = auth2.currentUser.get().getBasicProfile();
+    //         console.log('ID: ' + profile.getId());
+    //         console.log('Full Name: ' + profile.getName());
+    //         console.log('Given Name: ' + profile.getGivenName());
+    //         console.log('Family Name: ' + profile.getFamilyName());
+    //         console.log('Image URL: ' + profile.getImageUrl());
+    //         console.log('Email: ' + profile.getEmail());
+            
+    //     }else{
+    //         window.alert("not logged in");
+    //     }
+
+    // });
     }catch(error){
         // Handle Errors here.
         // var errorCode = error.code;
