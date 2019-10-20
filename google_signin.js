@@ -65,7 +65,7 @@ function onSignIn(googleUser) {
             // window.alert(user.getName());
             emailContainer.innerHTML = "Email " + user.getEmail();
 
-            fillotherdetails(loginUser, firebaseUser);
+            fillotherdetails(firebaseUser);
             console.log('User already signed-in Firebase.');
             // console.log("Google User", googleUser);
             console.log("Firebase User", firebaseUser);
