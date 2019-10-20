@@ -23,7 +23,7 @@ function setData() {
     
     gapi.load('auth2', function() {
         auth2 = gapi.auth2.init({
-          client_id: 'CLIENT_ID.apps.googleusercontent.com',
+          client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
           fetch_basic_profile: false,
           scope: 'profile'
         });
