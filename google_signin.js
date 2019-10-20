@@ -142,8 +142,8 @@ function setData() {
     //1) Add real festid
     var festid = "fest@1234"
 
-    var uniqueId = "uniqueId";
-    // var uniqueId = loginUser.getId();
+    // var uniqueId = "uniqueId";
+    var uniqueId = loginUser.getId();
     var userDetails = {
         name: name,
         college: college,
