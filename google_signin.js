@@ -32,7 +32,7 @@ function onSignIn(googleUser) {
                 profile.className = "show";
                 signOutButton.className = "show";
 
-                emailContainer.innerHTML = "Email " + user.getEmail();
+                emailContainer.innerHTML = "Email " + loginUser.getEmail();
 
                 fillotherdetails(result.user);
             })
