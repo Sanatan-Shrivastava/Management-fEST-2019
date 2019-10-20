@@ -65,7 +65,7 @@ function onSignIn(googleUser) {
             // window.alert(user.getName());
             emailContainer.innerHTML = "Email " + user.getEmail();
 
-            fillotherdetails(user, firebaseUser);
+            fillotherdetails(loginUser, firebaseUser);
             console.log('User already signed-in Firebase.');
             // console.log("Google User", googleUser);
             console.log("Firebase User", firebaseUser);
@@ -153,7 +153,7 @@ function setData() {
     };
 
     db.ref('users/' + uniqueId).set(userDetails);
-    // location.href = './register2.html';
+    location.href = './register2.html';
     }catch(error){
         // Handle Errors here.
         // var errorCode = error.code;
