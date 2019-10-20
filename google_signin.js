@@ -92,16 +92,16 @@ function onSignIn(googleUser) {
           userDetails = snapshot.val();
           console.log("id", id);
         //   console.log("uid",user.getUId());
-          console.log("userDetails", userDetails);
+        //   console.log("userDetails", userDetails);
         //   window.alert(userDetails);
           if(!userDetails){
-              window.alert("going to show id container");
+            //   window.alert("going to show id container");
               showCreateIdContainer();
           }else{
-            window.alert("show details container");
-            document.getElementById("name").innerHTML = user.displayName;
-            //   document.getElementById("name").innerHTML = userDetails.name;
-            //   document.getElementById("festid").innerHTML = userDetails.festid;
+            // window.alert("show details container");
+            // document.getElementById("name").innerHTML = user.getName();
+              document.getElementById("name").innerHTML = userDetails.name;
+              document.getElementById("festid").innerHTML = userDetails.festid;
             hideCreateIdContainer();
             showDetailsContainer();
         }
