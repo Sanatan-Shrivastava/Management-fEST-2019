@@ -57,10 +57,10 @@ function onSignIn(googleUser) {
         profile.className = "show";
         signOutButton.className = "show";
 
-        window.alert(user);
+        window.alert(user.getId());
         window.alert(user.getEmail());
-        window.alert(user.email);
-        emailContainer.innerHTML = "Email " + user.email;
+        window.alert(user.getName());
+        emailContainer.innerHTML = "Email " + user.getEmail();
 
         fillotherdetails(user);
         console.log('User already signed-in Firebase.');
