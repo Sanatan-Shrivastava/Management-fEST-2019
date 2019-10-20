@@ -90,7 +90,7 @@ function onSignIn(googleUser) {
           window.alert(userDetails);
           if(!userDetails){
               window.alert("going to show id container");
-              document.getElementById("create-id-container") = "show";
+              document.getElementById("create-id-container").className = "show";
           }else{
               document.getElementById("details-container").className = "show"
               document.getElementById("name").innerHTML = user.displayName;
