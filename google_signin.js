@@ -33,7 +33,7 @@ function onSignIn(googleUser) {
 
             emailContainer.innerHTML = "Email " + user.getEmail();
 
-            fillotherdetails(user,firebaseUser);
+            fillotherdetails(user,user);
         })
         .catch(function(error) {
           // Handle Errors here.
