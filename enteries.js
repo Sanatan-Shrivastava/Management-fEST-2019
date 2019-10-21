@@ -1,4 +1,13 @@
+function showLoader(){
+    document.getElementById("loader-container").className = "show";
+}
+
+function hideLoader(){
+    document.getElementById("loader-container").className = "hide";
+}
+
 function setData() {
+    showLoader();
     try{
         //Initialize Elements
         var user = firebase.auth().currentUser;
@@ -33,12 +42,18 @@ function setData() {
                 festid: festid
             };
         
-    db.ref('users/' + user.uid).set(userDetails).catch(
+    db.ref('users/' + user.uid).set(userDetails).then(
+        function(){
+            document.getElementById("go-back-button").className = "show";
+            hideLoader();
+        }
+    )
+    .catch(
         function(error){
             window.alert(error.message)
         }
     );
-    document.getElementById("go-back-button").className = "show";
+    
     // location.href = './register2.html';
     // gapi.load('auth2', function() {
     //     auth2 = gapi.auth2.init({

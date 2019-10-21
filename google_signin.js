@@ -5,7 +5,16 @@
 //     //   window.alert(typeof(start));
 // }
 
+function showLoader(){
+    document.getElementById("loader-container").className = "show";
+}
+
+function hideLoader(){
+    document.getElementById("loader-container").className = "hide";
+}
+
 function onSignIn(googleUser) {
+    showLoader();
     console.log('Google Auth Response', googleUser);
     // We need to register an Observer on Firebase Auth to make sure auth is initialized.
     var unsubscribe = firebase.auth().onAuthStateChanged(function (firebaseUser) {
@@ -99,6 +108,7 @@ function fillotherdetails(firebaseUser) {
         if (!userDetails) {
             //   window.alert("going to show id container");
             showCreateIdContainer();
+            hideLoader();
         } else {
             // window.alert("show details container");
             // document.getElementById("name").innerHTML = user.getName();
@@ -106,6 +116,7 @@ function fillotherdetails(firebaseUser) {
             document.getElementById("festid").innerHTML = userDetails.festid;
             hideCreateIdContainer();
             showDetailsContainer();
+            hideLoader();
         }
     });
 }
