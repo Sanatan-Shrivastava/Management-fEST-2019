@@ -74,13 +74,38 @@
             background-image: linear-gradient(-90deg, #67daff, #ffffff);
         }
 
-        #sign-out-button {
-            color: #fff;
+        .simple-button {
+            color: fff;
+            background: #616161;
             border: 0;
             font-size: 18px;
             outline: none;
             padding: 0.278em 0.556em;
-            background: #616161;
+            border-radius: 0.22em;
+            text-shadow: 0 -0.056em 0 rgba(0, 0, 0, .3);
+            box-shadow: 0 0.22em 0 #9cb8d8, 0 0.167em 1.11em rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .simple-button:active {
+            text-shadow: 0 -0.056em 0 rgba(0, 0, 0, .1);
+            box-shadow: 0 0 0.556em rgba(0, 0, 0, 0.5) inset;
+            position: relative;
+            top: 0.167em;
+        }
+
+        .simple-button {
+            margin-left: 30px;
+        }
+
+        #sign-out-button {
+            color: black;
+            border: 0;
+            font-size: 18px;
+            outline: none;
+            padding: 0.278em 0.556em;
+
+            background: #e8eaf6;
             border-radius: 0.22em;
             text-shadow: 0 -0.056em 0 rgba(0, 0, 0, .3);
             box-shadow: 0 0.22em 0 #9cb8d8, 0 0.167em 1.11em rgba(0, 0, 0, 0.3);
@@ -167,21 +192,28 @@
             <h1 style="margin-top:100px; color: #1a237e;">Profile</h1>
             <hr style="background-color: #212121;" width="75%" />
             <br />
-            <h4 style="color: #37474f;">Email</h4> <p id="email">abcxyz@gmail.com</p>
+            <h4 style="color: #37474f;">Email</h4>
+            <p id="email">abcxyz@gmail.com</p>
             <hr style="background-color: #005cb2;" width="60%" />
             <div id="create-id-container" class="hide">
+                <br />
                 <p style="font-weight: bold;">Please Create Your DMS-ID for Completing Registeration</p>
-                <button onclick="location.href = './generateId.html';" id="create-festid-button" class="simple-button">Create DMS-ID</button>
-                <!-- <button onclick="location.href = './generateId.html';" id="create-festid-button">Create
+                <button onclick="location.href = './generateId.html';" id="create-festid-button" class="simple-button">
+                    <br />
+                    <br />
+                    <!-- <button onclick="location.href = './generateId.html';" id="create-festid-button">Create
                     Festid</button> -->
             </div>
             <div id="details-container" class="hide">
-                <h4 style="color: #37474f;">Name</h4> <p id="name">Shaktiraj Daudra</p>
+                <h4 style="color: #37474f;">Name</h4>
+                <p id="name">Shaktiraj Daudra</p>
                 <hr style="background-color: #005cb2;" width="60%" />
                 <!-- <p style="color: #37474f;" id="name">Hello Shaktiraj Daudra,</p> -->
-                <h4 style="color: #37474f;">DMS-ID</h4><p id="festid">dmsFest123</p>
+                <h4 style="color: #37474f;">DMS-ID</h4>
+                <p id="festid">dmsFest123</p>
                 <hr style="background-color: #005cb2;" width="60%" />
-                <h4 style="color: #37474f;">Phone No.</h4><p id="festid">7359802004</p>
+                <h4 style="color: #37474f;">Phone No.</h4>
+                <p id="festid">7359802004</p>
                 <hr style="background-color: #005cb2;" width="60%" />
             </div>
             <button onclick="signOut()" class="hide" id="sign-out-button">Sign Out</button>

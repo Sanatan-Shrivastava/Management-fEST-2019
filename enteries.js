@@ -21,7 +21,7 @@ function setData() {
     
     // var uniqueId = "uniqueId";
     
-        window.alert(user.uid);
+        // window.alert(user.uid);
 
 
     // uniqueId = profile.getId();
