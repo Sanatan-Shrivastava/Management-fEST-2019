@@ -39,28 +39,28 @@ function setData() {
         }
     );
     document.getElementById('go-back-button').className = "show";
-    location.href = './register2.html';
-    gapi.load('auth2', function() {
-        auth2 = gapi.auth2.init({
-          client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
-          fetch_basic_profile: false,
-          scope: 'profile'
-        });
+    // location.href = './register2.html';
+    // gapi.load('auth2', function() {
+    //     auth2 = gapi.auth2.init({
+    //       client_id: '563054154548-u037bg5kvu45gegtoofmtr0c6ioql1ft.apps.googleusercontent.com',
+    //       fetch_basic_profile: false,
+    //       scope: 'profile'
+    //     });
 
-        if (auth2.isSignedIn.get()) {
-            var profile = auth2.currentUser.get().getBasicProfile();
-            console.log('ID: ' + profile.getId());
-            console.log('Full Name: ' + profile.getName());
-            console.log('Given Name: ' + profile.getGivenName());
-            console.log('Family Name: ' + profile.getFamilyName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail());
+    //     if (auth2.isSignedIn.get()) {
+    //         var profile = auth2.currentUser.get().getBasicProfile();
+    //         console.log('ID: ' + profile.getId());
+    //         console.log('Full Name: ' + profile.getName());
+    //         console.log('Given Name: ' + profile.getGivenName());
+    //         console.log('Family Name: ' + profile.getFamilyName());
+    //         console.log('Image URL: ' + profile.getImageUrl());
+    //         console.log('Email: ' + profile.getEmail());
             
-        }else{
-            window.alert("not logged in");
-        }
+    //     }else{
+    //         window.alert("not logged in");
+    //     }
 
-    });
+    // });
     }catch(error){
         // Handle Errors here.
         // var errorCode = error.code;
