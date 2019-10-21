@@ -28,11 +28,11 @@ function onSignIn(googleUser) {
                 var emailContainer = document.getElementById("email");
                 var signOutButton = document.getElementById("sign-out-button");
 
-                signInButton.className = "g-signin2 hide";
+                signInButton.className = "hide";
                 profile.className = "show";
                 signOutButton.className = "show";
 
-                emailContainer.innerHTML = "Email " + loginUser.getEmail();
+                emailContainer.innerHTML = loginUser.getEmail();
 
                 fillotherdetails(result.user);
             })
@@ -55,14 +55,14 @@ function onSignIn(googleUser) {
             var emailContainer = document.getElementById("email");
             var signOutButton = document.getElementById("sign-out-button");
 
-            signInButton.className = "g-signin2 hide";
+            signInButton.className = "hide";
             profile.className = "show";
             signOutButton.className = "show";
 
             // window.alert(user.getId());
             // window.alert(user.getEmail());
             // window.alert(user.getName());
-            emailContainer.innerHTML = "Email " + loginUser.getEmail();
+            emailContainer.innerHTML = loginUser.getEmail();
 
             fillotherdetails(firebaseUser);
             console.log('User already signed-in Firebase.');
