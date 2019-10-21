@@ -38,7 +38,7 @@ function setData() {
             window.alert(error.message)
         }
     );
-    document.getElementById("go-back-button").className = "show";
+    document.getElementById("go-back-button").className = 'show';
     // location.href = './register2.html';
     // gapi.load('auth2', function() {
     //     auth2 = gapi.auth2.init({
