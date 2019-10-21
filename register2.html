@@ -74,7 +74,7 @@
             background-image: linear-gradient(-90deg, #67daff, #ffffff);
         }
 
-        .simple-button {
+        #sign-out-button {
             color: #fff;
             border: 0;
             font-size: 18px;
@@ -87,14 +87,14 @@
             cursor: pointer;
         }
 
-        .simple-button:active {
+        #sign-out-button:active {
             text-shadow: 0 -0.056em 0 rgba(0, 0, 0, .1);
             box-shadow: 0 0 0.556em rgba(0, 0, 0, 0.5) inset;
             position: relative;
             top: 0.167em;
         }
 
-        .simple-button {
+        #sign-out-button {
             margin-left: 30px;
         }
     </style>
@@ -147,7 +147,7 @@
             <center>
                 <hr style="background-color: #212121;" width="75%" />
             </center>
-            <div class="g-signin2 show" style="margin-top: 100px;" data-onsuccess="onSignIn"></div>
+            <div class="g-signin2 show" data-onsuccess="onSignIn"></div>
             <br />
             <br />
             <div style="width: 60%;">
@@ -184,7 +184,7 @@
                 <h4 style="color: #37474f;">Phone No.</h4><p id="festid">7359802004</p>
                 <hr style="background-color: #005cb2;" width="60%" />
             </div>
-            <button onclick="signOut()" class="hide" id="sign-out-button" class="simple-button">Sign Out</button>
+            <button onclick="signOut()" class="hide" id="sign-out-button">Sign Out</button>
             <!-- <a id="sign-out-button" class="show" href="#" onclick="signOut();">Sign out</a> -->
         </div>
         <script>
