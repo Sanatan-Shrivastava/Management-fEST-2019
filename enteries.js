@@ -44,7 +44,8 @@ function setData() {
         
     db.ref('users/' + user.uid).set(userDetails).then(
         function(){
-            document.getElementById("go-back-button").className = "show";
+//             document.getElementById("go-back-button").className = "show";
+            location.href = './register2.html'
             hideLoader();
         }
     )
