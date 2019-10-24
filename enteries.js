@@ -53,29 +53,29 @@ function setData() {
 }
 
 function createAccount(idRef, userRef, userDetails) {
-    idRef.transaction(function (value) {
-        console.log(value);
-        var id = "MPP";
-        if (value) {
-            value++;
-            id = id + value;
-            userDetails['festid'] = id;
+    idRef.transaction(function (lastid) {
+        console.log(lastid);
+        // var id = "MPP";
+        // if (value) {
+        //     value++;
+        //     id = id + value;
+        //     userDetails['festid'] = id;
 
-            userRef.set(userDetails).then(
-                function () {
-                    //             document.getElementById("go-back-button").className = "show";
-                    hideLoader();
-                    location.href = './register2.html'
-                }
-            ).catch(
-                function (error) {
-                    window.alert(error.message)
-                }
-            );
+        //     userRef.set(userDetails).then(
+        //         function () {
+        //             //             document.getElementById("go-back-button").className = "show";
+        //             hideLoader();
+        //             location.href = './register2.html'
+        //         }
+        //     ).catch(
+        //         function (error) {
+        //             window.alert(error.message)
+        //         }
+        //     );
 
-        } else {
-            window.alert("Some Error Occured, Please Contact MPP Team.")
-        }
+        // } else {
+        //     window.alert("Some Error Occured, Please Contact MPP Team.")
+        // }
     });
 }
 
