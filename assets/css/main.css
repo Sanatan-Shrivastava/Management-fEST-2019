@@ -56,14 +56,24 @@ h6,
     margin-bottom: 10px;
 }
 
-p {
-    font-size: 20px;
+p{
+    font-size: 1.3em;
     font-family: "Martel", sans-serif;
-    margin: 0 0 15px;
-    line-height: 40px;
+    margin-left: 4em;
+    margin-right: 4em;
+    margin-top: 7em;
     font-weight: 400;
     color: rgb(66, 4, 4);
-    text-align: inherit;
+    text-align: center;
+}
+
+@media(max-width:767px){
+    .contentdes{
+        margin-left: 3em;
+        margin-right: 3em;
+        margin-top: -2em;
+        text-align: center;
+    }
 }
 
 p:last-child {
@@ -112,7 +122,7 @@ ul.nosyely_list {
     width: 30px;
     content: " ";
     position: absolute;
-    border-top: solid 3px #f50136;
+    border-top: solid 3px #f56f01;
     left: 0;
     top: 0;
 }
@@ -190,7 +200,7 @@ ul.nosyely_list {
 }
 
 .icon_list li i {
-    background-color: #f50136;
+    background-color: #f56f01;
     display: block;
     border-radius: 50px;
     padding: 7px 0;
@@ -334,7 +344,7 @@ img {
 
 .loader .loader-inner {
     position: absolute;
-    border: 2px solid #f50136;
+    border: 2px solid #f56f01;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -1794,7 +1804,10 @@ header.sticky_header {
 
 footer {
     padding: 50px 0 100px;
-    background: linear-gradient(#9763ff,rgb(255, 253, 112));
+    background: rgb(131, 59, 0);
+    font-size: 1.4em;
+    text-align: initial; 
+    font-family: 'Martel';
 }
 
 footer .footer_box {
@@ -1813,7 +1826,7 @@ footer .footer_box h4.footer_title:before {
     width: 30px;
     content: " ";
     position: absolute;
-    border-top: solid 3px #f50136;
+    border-top: solid 3px #fff;
     left: 0;
     top: 0;
 }
@@ -1834,19 +1847,19 @@ footer .footer_social li {
 }
 
 footer .footer_social li a {
-    border: solid 1px #f50136;
+    border: solid 1px rgb(65, 14, 14);
     display: block;
     border-radius: 50px;
     padding: 7px 0;
     font-size: 24px;
-    color: #f50136;
+    color: rgb(65, 14, 14);
     width: 40px;
     height: 40px;
     text-align: center;
 }
 
 footer .footer_social li a:hover {
-    background-color: #f50136;
+    background-color: #000;
     color: #ffffff;
 }
 
@@ -1971,11 +1984,13 @@ footer .newsletter_form .form-control {
 }
 
 .btn-primary {
-    background-color: #f50136;
-    border: solid 1px #f50136;
-    color: #ffffff;
+    background-color: #f56f01;
+    border: solid 1px #f56f01;
+    color: #000000;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
+    font-family: 'Cinzel';
+    font-size: 1.2em;
 }
 
 .btn-primary:hover {
@@ -1985,17 +2000,16 @@ footer .newsletter_form .form-control {
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
 }
-
 .btn-primary-outline {
     background-color: transparent;
-    border: solid 1px #f50136;
-    color: #f50136;
+    border: solid 1px #f56f01;
+    color: #f56f01;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
 }
 
 .btn-primary-outline:hover {
-    background-color: #f50136;
+    background-color: #f56f01;
     color: #ffffff;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
@@ -2238,7 +2252,7 @@ Cover
 }
 
 .cover_nav .cover_dots li.active {
-    /* border: solid 2px #f50136; */
+    /* border: solid 2px #f56f01; */
 }
 
 .cover_nav .cover_dots:before {
@@ -2365,7 +2379,7 @@ Cover
     padding: 13px;
     font-size: 12px;
     font-weight: 600;
-    color: #f50136;
+    color: #f56f01;
 }
 
 @media (max-width: 767px) {
@@ -2416,7 +2430,7 @@ Cover
     margin-top: -10px;
     padding: 0 15px;
     font-size: 72px;
-    color: #f50136;
+    color: #f56f01;
     vertical-align: middle;
     border-radius: 4px;
     display: block;
@@ -2440,7 +2454,7 @@ Cover
 }
 
 .icon_box_one .content a {
-    color: #f50136;
+    color: #f56f01;
     font-size: 14px;
     font-weight: 600;
     text-transform: capitalize;
@@ -2456,7 +2470,7 @@ Cover
 .icon_box_one:hover {
     -webkit-box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25);
     box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25);
-    background-color: #f50136;
+    background-color: #f56f01;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
@@ -2496,7 +2510,7 @@ Cover
     left: 0;
     font-size: 56px;
     width: 50px;
-    color: #f50136;
+    color: #f56f01;
     top: 0;
     bottom: auto;
     line-height: 1;
@@ -2550,7 +2564,7 @@ Cover
 }
 
 .speaker_box .speaker_img .info_box .name {
-    color: #f50136;
+    color: #f56f01;
     font-size: 16px;
     margin-bottom: 0;
     font-weight: 600;
@@ -2581,12 +2595,12 @@ Cover
 }
 
 .speaker_box .speaker_social ul li a {
-    border: solid 1px #f50136;
+    border: solid 1px #f56f01;
     display: block;
     border-radius: 50px;
     padding: 7px 0;
     font-size: 24px;
-    color: #f50136;
+    color: #f56f01;
     width: 40px;
     height: 40px;
     text-align: center;
@@ -2594,7 +2608,7 @@ Cover
 
 .speaker_box .speaker_social ul li a:hover {
     color: #ffffff;
-    background-color: #f50136;
+    background-color: #f56f01;
 }
 
 .speaker_box:hover .speaker_img img {
@@ -2606,7 +2620,7 @@ Cover
 }
 
 .speaker_box:hover .speaker_img .info_box {
-    background-color: #f50136;
+    background-color: #f56f01;
     -webkit-transition: all ease-in-out 0.4s;
     transition: all ease-in-out 0.4s;
 }
@@ -2637,7 +2651,7 @@ Cover
 }
 
 .price_box .price_highlight {
-    background-color: #f50136;
+    background-color: #f56f01;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 12px;
@@ -2739,7 +2753,7 @@ Cover
     width: 30px;
     content: " ";
     position: absolute;
-    border-top: solid 4px #f50136;
+    border-top: solid 4px #f56f01;
     left: 0;
     top: 0;
 }
@@ -2756,7 +2770,7 @@ Cover
 }
 
 .event_box .event_info .event_date {
-    color: #f50136;
+    color: #f56f01;
     font-size: 12px;
     font-weight: 700;
 }
@@ -2769,7 +2783,7 @@ Cover
     line-height: 28px;
     font-size: 12px;
     font-weight: 700;
-    color: #f50136;
+    color: #f56f01;
 }
 
 .event_box .readmore_btn:hover {
@@ -2793,7 +2807,7 @@ Cover
     font-size: 48px;
     display: inline-block;
     margin: 0;
-    color: #f50136;
+    color: #f56f01;
     font-weight: 600;
 }
 
@@ -2817,7 +2831,7 @@ Cover
 }
 
 .table.event_calender thead.event_title {
-    background-color: #f50136;
+    background-color: #f56f01;
     color: #ffffff;
     border: 0;
 }
@@ -2889,7 +2903,7 @@ Cover
 .table.event_calender tbody td.buy_link a {
     text-transform: capitalize;
     font-weight: 600;
-    color: #f50136;
+    color: #f56f01;
     text-decoration: underline;
     line-height: 24px;
     -webkit-transition: all ease-in-out 0.4s;
@@ -2908,7 +2922,7 @@ Cover
 -------------------------------------------------------- */
 
 .testimonial_carousel {
-    border: solid 2px #f50136;
+    border: solid 2px #f56f01;
     padding: 25px;
     position: relative;
     margin: 15px 0;
@@ -2951,7 +2965,7 @@ Cover
 }
 
 .testimonial_carousel .testimonial_author p span {
-    color: #f50136;
+    color: #f56f01;
 }
 
 .testimonial_carousel:before {
@@ -3031,7 +3045,7 @@ Cover
 }
 
 .blog_card .blog_box_data .blog_date {
-    background-color: #f50136;
+    background-color: #f56f01;
     padding: 15px 30px;
     border-radius: 2px;
     margin-bottom: 15px;
@@ -3050,7 +3064,7 @@ Cover
 }
 
 .blog_card .blog_box_data .blog_meta a:hover {
-    color: #f50136;
+    color: #f56f01;
 }
 
 .blog_card .blog_box_data .blog_word {
@@ -3060,7 +3074,7 @@ Cover
 .blog_card .blog_box_data .readmore_btn {
     font-size: 12px;
     font-weight: 600;
-    color: #f50136;
+    color: #f56f01;
     text-decoration: underline;
 }
 
@@ -3104,13 +3118,13 @@ Cover
 }
 
 .nav_menu li a:hover {
-    border: solid 2px #f50136;
+    border: solid 2px #f56f01;
 }
 
 .nav_menu li span {
     border-radius: 50px;
     padding: 12px 8px;
-    border: solid 2px #f50136;
+    border: solid 2px #f56f01;
 }
 
 .widget {
@@ -3156,7 +3170,7 @@ Cover
 }
 
 .widget_recent_posts .content a:hover {
-    color: #f50136;
+    color: #f56f01;
 }
 
 .widget_recent_posts .content p {
@@ -3194,7 +3208,7 @@ Cover
 }
 
 .widget_categories ul li a:hover {
-    color: #f50136;
+    color: #f56f01;
 }
 
 .widget_instagram {
@@ -3237,7 +3251,7 @@ Cover
 
 .widget_tags ul li a:hover {
     background-color: #ffffff;
-    border: solid 1px #f50136;
+    border: solid 1px #f56f01;
     -webkit-transition: all ease-in-out 0.4s;
     transition: all ease-in-out 0.4s;
 }
@@ -3271,19 +3285,19 @@ Cover
 }
 
 .social_list li a {
-    border: solid 1px #f50136;
+    border: solid 1px #f56f01;
     display: block;
     border-radius: 50px;
     padding: 7px 0;
     font-size: 24px;
-    color: #f50136;
+    color: #f56f01;
     width: 40px;
     height: 40px;
     text-align: center;
 }
 
 .social_list li a:hover {
-    background-color: #f50136;
+    background-color: #f56f01;
     color: #ffffff;
 }
 
@@ -3308,7 +3322,7 @@ Cover
 
 .form-control:focus {
     background-color: #ffffff;
-    border-color: #f50136;
+    border-color: #f56f01;
     -webkit-transition: all ease-in-out 0.4s;
     transition: all ease-in-out 0.4s;
 }
@@ -3348,7 +3362,7 @@ textarea.form-control {
 .single_progressbar .progress {
     margin-bottom: 5px;
     overflow: hidden;
-    background: #f50136;
+    background: #f56f01;
     /* The Fallback */
     background: rgba(245, 1, 54, 0.2);
     border-radius: 1px;
@@ -3361,11 +3375,11 @@ textarea.form-control {
     font-size: 16px;
     line-height: 16px;
     text-align: center;
-    background-color: #f50136;
+    background-color: #f56f01;
 }
 
 .accordion_card {
-    border: solid 1px #f50136;
+    border: solid 1px #f56f01;
     border-radius: 0;
     margin: 15px 0;
 }
@@ -3383,16 +3397,16 @@ textarea.form-control {
 
 .accordion_card .card-header h5 a {
     background-color: #ffffff;
-    color: #f50136;
+    color: #f56f01;
     display: block;
     padding: 15px;
-    border-bottom: solid 1px #f50136;
+    border-bottom: solid 1px #f56f01;
 }
 
 .accordion_card .card-header h5 a.collapsed {
-    background-color: #f50136;
+    background-color: #f56f01;
     color: #ffffff;
-    border-bottom: solid 0 #f50136;
+    border-bottom: solid 0 #f56f01;
 }
 
 .accordion_card .card-body {
