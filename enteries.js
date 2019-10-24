@@ -54,6 +54,7 @@ function setData() {
 
 function createAccount(idRef, userRef, userDetails) {
     idRef.transaction(function (value) {
+        console.log(value);
         var id = "MPP";
         if (value) {
             value++;
