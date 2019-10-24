@@ -114,6 +114,7 @@ function fillotherdetails(firebaseUser) {
             // document.getElementById("name").innerHTML = user.getName();
             document.getElementById("name").innerHTML = userDetails.name;
             document.getElementById("festid").innerHTML = userDetails.festid;
+            document.getElementById("phone").innerHTML = userDetails.phone;
             hideCreateIdContainer();
             showDetailsContainer();
             hideLoader();
