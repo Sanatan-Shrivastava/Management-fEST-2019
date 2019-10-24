@@ -10,7 +10,7 @@ function setData() {
     showLoader();
     try {
         //Initialize Elements
-        // var user = firebase.auth().currentUser;
+        var user = firebase.auth().currentUser;
         var db = firebase.database();
         var mName = document.getElementById("name");
         var mCollege = document.getElementById("college");
@@ -18,8 +18,8 @@ function setData() {
         var mMnitians = document.getElementById("mnitians");
         var festid = "sad";
         var idRef = db.ref("festid");
-        var userRef = db.ref('users/unique');
-        // var userRef = db.ref('users/' + user.uid);
+        // var userRef = db.ref('users/unique');
+        var userRef = db.ref('users/' + user.uid);
 
         //Store value in string
         var name = mName.value;
