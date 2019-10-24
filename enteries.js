@@ -10,15 +10,16 @@ function setData() {
     showLoader();
     try {
         //Initialize Elements
-        var user = firebase.auth().currentUser;
+        // var user = firebase.auth().currentUser;
         var db = firebase.database();
         var mName = document.getElementById("name");
         var mCollege = document.getElementById("college");
         var mNumber = document.getElementById("number");
         var mMnitians = document.getElementById("mnitians");
-        var festid = "";
+        var festid = "sad";
         var idRef = db.ref("festid");
-        var userRef = db.ref('users/' + user.uid);
+        var userRef = db.ref('users/unique');
+        // var userRef = db.ref('users/' + user.uid);
 
         //Store value in string
         var name = mName.value;
@@ -53,29 +54,36 @@ function setData() {
 }
 
 function createAccount(idRef, userRef, userDetails) {
-    idRef.transaction(function (lastid) {
-        console.log(lastid);
-        // var id = "MPP";
-        // if (value) {
-        //     value++;
-        //     id = id + value;
-        //     userDetails['festid'] = id;
+    var x = 0;
+    firebase.database().ref('/festid').transaction(function (cv) {
+        console.log(cv);
+        // Check if the result is NOT NULL:
+        x = cv;
+        return (cv || 0) + 1;
+    }, function (error, committed, snapshot) {
+        if (error) {
+            console.log("error in transaction");
+        } else if (!committed) {
+            console.log("transaction not committed");
+        } else {
+            console.log("Transaction Committed");
+        }
+    }, true).then(function () {
+        var id = "MPP" + x;
+        console.log(id);
+        userDetails['festid'] = id;
 
-        //     userRef.set(userDetails).then(
-        //         function () {
-        //             //             document.getElementById("go-back-button").className = "show";
-        //             hideLoader();
-        //             location.href = './register2.html'
-        //         }
-        //     ).catch(
-        //         function (error) {
-        //             window.alert(error.message)
-        //         }
-        //     );
-
-        // } else {
-        //     window.alert("Some Error Occured, Please Contact MPP Team.")
-        // }
+        userRef.set(userDetails).then(
+            function () {
+                //             document.getElementById("go-back-button").className = "show";
+                hideLoader();
+                location.href = './register2.html'
+            }
+        ).catch(
+            function (error) {
+                window.alert(error.message)
+            }
+        );
     });
 }
 
