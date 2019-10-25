@@ -1,2 +1,2 @@
-# FlairFiesta-19
-IIITK's socio-cultural annual fest
+# Mahaprabandhan-Parva
+DMS MNIT Jaipur annual Management Fest 2k19
