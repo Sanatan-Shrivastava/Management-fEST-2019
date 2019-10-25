@@ -41,7 +41,7 @@ html {
     font-size: 0.75rem;
     border-radius: 25px;
     color: white;
-    font-family: 'Grenze';
+    font-family: 'ZCOOL+XiaoWei';
     transition: all 250ms ease;
 }
 .timeline-wrapper {
@@ -127,7 +127,7 @@ background-position: 0% 50%;
 .timeline__day-sum {
     color: rgb(46, 2, 2);
     font-weight: 300;
-    font-size: 1em;
+    font-size: 1.6em;
     display: block;
     margin-bottom: 1.5em;
     line-height: 1.5;

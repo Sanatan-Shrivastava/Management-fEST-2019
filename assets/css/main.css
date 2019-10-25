@@ -57,11 +57,11 @@ h6,
 }
 
 p {
-    font-size: 20px;
-    font-family: "Martel", sans-serif;
+    font-size: 22px;
+    font-family:  'ZCOOL XiaoWei', sans-serif;
     margin: 0 0 15px;
     line-height: 40px;
-    font-weight: 400;
+    font-weight: 900;
     color: rgb(66, 4, 4);
     text-align: inherit;
 }
@@ -74,8 +74,8 @@ p {
 }
 @media(max-width:767px){
     .contentdes{
-        margin-left: 3em;
-        margin-right: 3em;
+        margin-left:2em;
+        margin-right:2em;
         margin-top: -2em;
         text-align: center;
     }
@@ -1808,7 +1808,7 @@ header.sticky_header {
 
 footer {
     padding: 50px 0 100px;
-    background: rgb(131, 59, 0);
+    background-image:url('./src/images/asset.png');
     font-size: 1.4em;
     text-align: initial; 
     font-family: 'Martel';

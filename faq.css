@@ -1,0 +1,69 @@
+html {
+font-size: 10px;
+}
+button {
+all: unset;
+}
+.section-title {
+color: #ff7e28;
+font-family: 'Cinzel';
+font-size: 4rem;
+font-weight: bold;
+text-align: center;
+text-transform: uppercase;
+padding: 3rem 0;
+}
+@media (max-width: 767px) {
+.section-title {
+    /* portrait && landscape */
+    font-size: 2.6rem;
+}
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+.section-title {
+    /* tablets && small laptops */
+}
+}
+#faq {
+padding: 0 0 10rem;
+}
+#faq .accordion .card {
+border: 0.1rem solid #C4C4C4;
+border-radius: 0.4rem;
+overflow: hidden;
+margin: 0 0 1.5rem;
+}
+#faq .accordion .card .card-header {
+border: none;
+padding: 0;
+}
+#faq .accordion .card .card-header button {
+background: #ff7e28 url('http://icons.iconarchive.com/icons/icons8/ios7/512/User-Interface-Minus-icon.png') no-repeat 98.5% center / 30px;
+color: #FFFFFF;
+font-size: 2rem;
+width: 100%;
+padding: 1rem 0;
+}
+#faq .accordion .card .card-header button span {
+display: block;
+margin: 0 4rem 0 1.5rem;
+}
+#faq .accordion .card .card-header button:focus {
+box-shadow: none;
+outline: none;
+}
+#faq .accordion .card .card-header button.collapsed {
+background: #FFFFFF url('https://image.flaticon.com/icons/png/128/61/61112.png') no-repeat 98% center / 18px 18px;
+color: #ff9047;
+}
+#faq .accordion .card .card-body {
+font-size: 1.6rem;
+font-weight: 400;
+letter-spacing: 0.05rem;
+line-height: 155%;
+}
+#faq .support-text {
+font-size: 1.6rem;
+letter-spacing: 0.05rem;
+margin: 0;
+}
