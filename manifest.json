@@ -1,0 +1,9 @@
+{
+    "name": "Mahaprabandhan-Parva'19",
+    "short_name": "MPP'19",
+    "theme_color": "#f5a001",
+    "background_color": "#f5a001",
+    "display": "browser",
+    "scope": "/",
+    "start_url": "https://mahaprabandhan-parva.org"
+    }
