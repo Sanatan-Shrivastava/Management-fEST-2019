@@ -2073,6 +2073,7 @@ Cover
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    margin-top: -2em;
 }
 
 .cover_slider .slider-content-left {
@@ -2108,12 +2109,12 @@ Cover
 }
 
 .cover_slider .cover_item .slider_content .slider-content-inner .cover-title {
-    margin-top: 25px;
+    margin-top: 20px;
     margin-bottom: 0;
     opacity: 0;
     font-weight: 500;
     color: #03142E;
-    text-transform: uppercase;
+    /* text-transform: ; */
     -webkit-transform: translateY(20px);
     transform: translateY(20px);
     -webkit-transition: all 0.4s 600ms ease-in-out;
