@@ -16,28 +16,46 @@ function setData() {
         var mCollege = document.getElementById("college");
         var mNumber = document.getElementById("number");
         var mMnitians = document.getElementById("mnitians");
-        var festid = "sad";
+        var mCId = document.getElementById("c-id");
+        var festid = "";
         var idRef = db.ref("festid");
-        // var userRef = db.ref('users/unique');
-        var userRef = db.ref('users/' + user.uid);
+        var userRef = null;
+        var valid = true;
+
+        if(user === null){
+            window.alert("Please Sign in First");
+            valid = false;
+        }
 
         //Store value in string
-        var name = mName.value;
-        var college = mCollege.value;
-        var number = mNumber.value;
-        var mnitians = mMnitians.value;
+        var name = mName.value.trim();
+        var college = mCollege.value.trim();
+        var number = mNumber.value.trim();
+        var mnitians = mMnitians.value.trim();
+        var collegeId = mCId.value.trim();
 
-        var userDetails = {
-            name: name,
-            college: college,
-            phone: number,
-            mnitians: mnitians,
-            festid: festid
-        };
+        if(name === "" || college === "" || number === ""
+            || mnitians === "" || collegeId === "") {
+            hideLoader();
+            valid = false;
+            window.alert("Please Fill all details");
+        }
 
-
-        createAccount(idRef, userRef, userDetails);
-
+        if(valid){
+            var userDetails = {
+                name: name,
+                college: college,
+                phone: number,
+                mnitians: mnitians,
+                festid: festid,
+                collegeId: collegeId
+            };
+            userRef = db.ref('users/' + user.uid);
+    
+            createAccount(idRef, userRef, userDetails);
+        }else{
+            hideLoader();
+        }
         // var uniqueId = "uniqueId";
         // location.href = './register2.html';
     } catch (error) {
@@ -75,8 +93,9 @@ function createAccount(idRef, userRef, userDetails) {
 
         userRef.set(userDetails).then(
             function () {
-                //             document.getElementById("go-back-button").className = "show";
+                document.getElementById("go-back-button").className = "show";
                 hideLoader();
+                window.alert("Successfully MPP-NUMBER Generated...");
                 location.href = './register2.html'
             }
         ).catch(
