@@ -95,7 +95,7 @@ function createAccount(idRef, userRef, userDetails) {
             function () {
                 document.getElementById("go-back-button").className = "show";
                 hideLoader();
-                window.alert("Successfully MPP-NUMBER Generated...");
+                window.alert("MPP-NUMBER generated successfully!");
                 location.href = './register2.html'
             }
         ).catch(
