@@ -1,9 +1,9 @@
 var cacheName = 'Mahaprabandhan-parva';
 var filesToCache = [
 '/',
-'/index.html',
-'/assets/css/main.css',
-'/main.js'
+'./index.html',
+'./assets/css/main.css',
+'./main.js'
 ];
 
 /* Start the service worker and cache all of the app's content */
