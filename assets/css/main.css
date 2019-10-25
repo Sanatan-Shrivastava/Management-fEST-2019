@@ -1699,7 +1699,7 @@ header ul.menu li a.nav-link {
 }
 @media (max-width:768px){
     header ul.menu li a.nav-link{
-        color: rgb(243, 0, 0)
+        color: rgb(70, 0, 0)
     }
 }
 header ul.menu li a.nav-link:hover {
